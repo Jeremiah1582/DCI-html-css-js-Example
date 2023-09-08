@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background: goldenrod;
+            
+        }
+
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: azure;
+            padding: 40px;
+        }
+        .input_section{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        input {
+margin: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Street Cats</h1>
+        <img src="https://i.pinimg.com/736x/c6/ca/f3/c6caf3226fd35ce454f5cf8398feabd7--hoods-so-cute.jpg" alt="" width="50%">
+    <p>Please donate to some ratchet hood cats out on these streets, <br>
+        trying to make a buck for their kittens to eat <br>
+        living in bins <br>
+        struggling to make opposite ends <br>
+        meet 
+    </p>
+    <div class="input_section">
+  <input type="text" name="" id="amount">
+    <button type="submit">
+        Click To donate
+    </button>
+
+    </div>
+  
+    </main>
+    <script>
+        const button =document.querySelector('button')
+        const theInput = document.querySelector('#amount')
+        button.addEventListener('click', handleDonation)
+     
+
+        function handleDonation(){
+            const amount = theInput.value
+        
+            console.log('a donation was made ', Number(amount))
+
+            if(Number(amount) <= 0 ){
+                document.body.style.background="red"
+                console.log(amount)
+                alert(`Ohh You must be a dog to give ${Number(amount)}` )
+            }else{
+                document.body.style.background="green"
+                alert(`you're one of them cool cats `)
+            }
+        }
+
+        
+    </script>
+    
+</body>
+</html>
